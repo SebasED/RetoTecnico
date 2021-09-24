@@ -1,0 +1,1 @@
+Jugador [nombre=Sara, premio=0, ronda=1]Jugador [nombre=Sebas, premio=0, ronda=1]
