@@ -42,7 +42,11 @@ public class Premio {
 			this.dinero = 1500000;
 			break;
 		case 5:
-			this.dinero = 5000000;
+			this.dinero = 4000000;
+			break;
+		default:
+			this.dinero = 10000000;
+			break;
 		}
 		
 	}

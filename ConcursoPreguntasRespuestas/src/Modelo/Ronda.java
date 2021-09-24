@@ -33,26 +33,39 @@ public class Ronda {
 	
 	public void iniciarRonda() {
 		pregunta = new Pregunta();
-		int respuestaElegida;
+		int respuestaElegida = 0;
 		String laPregunta = pregunta.obtenerPregunta(numRonda);
 		opciones = new Opciones(pregunta.getNumPregunta(), numRonda);
 		opcionCorrecta = new OpcionCorrecta(numRonda,pregunta.getNumPregunta());
-		try {
-			respuesta = JOptionPane.showInputDialog(null,  laPregunta  +
-	                "\n 1. " + opciones.getOpciones()[0]+
-	                "\n 2. " + opciones.getOpciones()[1]+
-	                "\n 3. " + opciones.getOpciones()[2]+         
-	                "\n 4. " + opciones.getOpciones()[3]+
-	                "\n 5. " + "Elija esta opción si desea retirarse"+
-	                "\n Debe escribir una sola respuesta (1, 2, 3, 4 o 5) ",
-	                "JUEGO DE PREGUNTAS", JOptionPane.INFORMATION_MESSAGE);
-		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 5", "JUEGO DE PREGUNTAS", 1);
-			iniciarRonda();
+		boolean control = true;
+		
+		while(control) {
+			control = false;
+			try {
+				respuesta = JOptionPane.showInputDialog(null,  laPregunta  +
+		                "\n 1. " + opciones.getOpciones()[0]+
+		                "\n 2. " + opciones.getOpciones()[1]+
+		                "\n 3. " + opciones.getOpciones()[2]+         
+		                "\n 4. " + opciones.getOpciones()[3]+
+		                "\n 5. " + "Elija esta opción si desea retirarse"+
+		                "\n Debe escribir una sola respuesta (1, 2, 3, 4 o 5) ",
+		                "JUEGO DE PREGUNTAS. Ronda: " + numRonda, JOptionPane.INFORMATION_MESSAGE);
+				
+				respuestaElegida = Integer.parseInt(respuesta);
+				if(respuestaElegida < 1 || respuestaElegida > 5) {
+					control = true;
+					JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 5", "JUEGO DE PREGUNTAS", 1);
+				}
+			}catch(ArrayIndexOutOfBoundsException e) {
+				control = true;	
+				JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 5", "JUEGO DE PREGUNTAS", 1);
+				
+			}catch(NumberFormatException e) {
+				control = true;
+				JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 5", "JUEGO DE PREGUNTAS", 1);
+			}
 		}
-		
-		respuestaElegida = Integer.parseInt(respuesta);
-		
+				
 		if(respuestaElegida == 5) {
 			retirarse();
 		}
@@ -74,7 +87,10 @@ public class Ronda {
 		
 		if(numRonda > 5) {
 			jugador.setResultado("Ganador");
+			premio = new Premio(numRonda);
+			jugador.aumentarDinero(premio.getDinero());
 			jugador.guardarJugador();
+			JOptionPane.showMessageDialog(null, "Felicidades "+ jugador.getNombre() + ", acabas de ganar el juego y un monto de " + jugador.getPremio() + " pesos", "JUEGO DE PREGUNTAS", 1);
 			juego.salir();
 		} else {
 			premio = new Premio(numRonda);
@@ -83,14 +99,14 @@ public class Ronda {
 			JOptionPane.showMessageDialog(null, "Felicidades "+ jugador.getNombre() + ", acabas de ganar " + premio.getDinero() + " pesos", "JUEGO DE PREGUNTAS", 1);
 			
 			iniciarRonda();
-		}
+		} 
 	
 	}
 	
 	private void retirarse() {
 		jugador.setResultado("Jugador retirad@");
 		jugador.guardarJugador();
-		JOptionPane.showMessageDialog(null, "Felicitaciones, te llevas un total de: " + jugador.getPremio() + "pesos", "JUEGO DE PREGUNTAS", 1);
+		JOptionPane.showMessageDialog(null, "Felicitaciones, te llevas un total de: " + jugador.getPremio() + " pesos", "JUEGO DE PREGUNTAS", 1);
 		juego.salir();
 	}
 }

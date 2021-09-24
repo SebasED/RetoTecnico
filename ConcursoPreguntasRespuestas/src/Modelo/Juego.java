@@ -15,7 +15,7 @@ public class Juego {
 	}
 
 	public void inicio() {
-		String opcion;
+		String opcion = "";
 		int opcionSeleccionada;
 		
 		try {
@@ -43,6 +43,8 @@ public class Juego {
 				break;
 			}
 		}catch(Exception e){
+			if (opcion == null)
+				salir();
 			System.out.println("El error es " + e);
 			JOptionPane.showMessageDialog(null, "Debe elegir una opción correcta", "JUEGO DE PREGUNTAS", JOptionPane.ERROR_MESSAGE);
 			inicio();

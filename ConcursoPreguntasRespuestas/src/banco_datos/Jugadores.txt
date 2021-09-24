@@ -1,1 +1,9 @@
 
+Jugador [nombre=sfgsgsd, premio=0, ronda=1, resultado=Perdio]
+Jugador [nombre=treta, premio=0, ronda=2, resultado=Perdio]
+Jugador [nombre=hfdgdf, premio=0, ronda=3, resultado=Perdio]
+Jugador [nombre=nada, premio=1000000, ronda=3, resultado=Jugador retirad@]
+Jugador [nombre=porque, premio=0, ronda=2, resultado=Perdio]
+Jugador [nombre=sdfsdfs, premio=0, ronda=3, resultado=Perdio]
+Jugador [nombre=jgjdf, premio=7500000, ronda=5, resultado=Ganador]
+Jugador [nombre=ultimo, premio=16500000, ronda=5, resultado=Ganador]
