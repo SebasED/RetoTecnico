@@ -35,7 +35,6 @@ public class Ronda {
 		pregunta = new Pregunta();
 		int respuestaElegida;
 		String laPregunta = pregunta.obtenerPregunta(numRonda);
-		System.out.println("Hasta acá llego");
 		opciones = new Opciones(pregunta.getNumPregunta(), numRonda);
 		opcionCorrecta = new OpcionCorrecta(numRonda,pregunta.getNumPregunta());
 		try {
@@ -44,21 +43,26 @@ public class Ronda {
 	                "\n 2. " + opciones.getOpciones()[1]+
 	                "\n 3. " + opciones.getOpciones()[2]+         
 	                "\n 4. " + opciones.getOpciones()[3]+
-	                "\n Debe escribir una sola respuesta (1, 2, 3 o 4) ",
+	                "\n 5. " + "Elija esta opción si desea retirarse"+
+	                "\n Debe escribir una sola respuesta (1, 2, 3, 4 o 5) ",
 	                "JUEGO DE PREGUNTAS", JOptionPane.INFORMATION_MESSAGE);
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 4", "JUEGO DE PREGUNTAS", 1);
+			JOptionPane.showMessageDialog(null, "Debe elegir una respuesta entre 1 y 5", "JUEGO DE PREGUNTAS", 1);
 			iniciarRonda();
 		}
 		
 		respuestaElegida = Integer.parseInt(respuesta);
 		
-		if(opciones.getOpciones()[respuestaElegida - 1] == opcionCorrecta.getRespuesta()) {
+		if(respuestaElegida == 5) {
+			retirarse();
+		}
+		if(opciones.getOpciones()[respuestaElegida - 1].equals(opcionCorrecta.getRespuesta())) {
 			avanzarRonda();
 		}else {
 			JOptionPane.showMessageDialog(null, "Respuesta incorrecta, acabas de perder ", "JUEGO DE PREGUNTAS", 1);
 			jugador.setPremio(0);
 			jugador.setRonda(numRonda);
+			jugador.setResultado("Perdio");
 			jugador.guardarJugador();
 			juego.salir();
 		}
@@ -66,8 +70,27 @@ public class Ronda {
 	}
 	
 	private void avanzarRonda() {
-		//Falta definir esta parte
 		this.numRonda++;
 		
+		if(numRonda > 5) {
+			jugador.setResultado("Ganador");
+			jugador.guardarJugador();
+			juego.salir();
+		} else {
+			premio = new Premio(numRonda);
+			jugador.aumentarDinero(premio.getDinero());
+			jugador.setRonda(numRonda);			
+			JOptionPane.showMessageDialog(null, "Felicidades "+ jugador.getNombre() + ", acabas de ganar " + premio.getDinero() + " pesos", "JUEGO DE PREGUNTAS", 1);
+			
+			iniciarRonda();
+		}
+	
+	}
+	
+	private void retirarse() {
+		jugador.setResultado("Jugador retirad@");
+		jugador.guardarJugador();
+		JOptionPane.showMessageDialog(null, "Felicitaciones, te llevas un total de: " + jugador.getPremio() + "pesos", "JUEGO DE PREGUNTAS", 1);
+		juego.salir();
 	}
 }

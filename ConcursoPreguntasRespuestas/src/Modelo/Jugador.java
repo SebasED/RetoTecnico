@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Jugador {
 
 	private String nombre;
-	private boolean respuesta;
+	private String resultado;
 	private int premio = 0;
 	private int ronda = 0;
 	
@@ -23,14 +23,6 @@ public class Jugador {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	
-	public boolean isRespuesta() {
-		return respuesta;
-	}
-
-	public void setRespuesta(boolean respuesta) {
-		this.respuesta = respuesta;
 	}
 
 	public int getPremio() {
@@ -47,6 +39,18 @@ public class Jugador {
 
 	public void setRonda(int ronda) {
 		this.ronda = ronda;
+	}
+
+	public String getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
+	
+	public void aumentarDinero(int dinero) {
+		this.premio = this.premio + dinero;
 	}
 
 	public void guardarJugador() {
@@ -69,7 +73,7 @@ public class Jugador {
 	@Override
 	public String toString() {
 		return "Jugador [nombre=" + nombre + ", premio=" + premio + ", ronda=" + ronda
-				+ "]";
+				+ ", resultado=" + resultado + "]" + "\n";
 	}
 	
 }

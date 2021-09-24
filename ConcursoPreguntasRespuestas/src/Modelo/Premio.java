@@ -4,7 +4,7 @@ public class Premio {
 	private int dinero = 0;
 	private int ronda;
 	
-	public Premio(int dinero, int ronda) {
+	public Premio(int ronda) {
 		super();
 		this.ronda = ronda;
 		

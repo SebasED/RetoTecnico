@@ -49,7 +49,7 @@ public class Pregunta {
 	public String obtenerPregunta(int ronda) {
 		String pregunta = "";
 		String archivo = identificarArchivo(ronda);
-		int num = (int) (Math.random()*4 + 1);
+		int num = (int) Math.floor(Math.random()*5 + 1);
 		BufferedReader br = null;
 		
 		try {
@@ -71,7 +71,8 @@ public class Pregunta {
 					e.printStackTrace();
 				}
 		} 
-		pregunta = preguntas.get(num);
+		
+		pregunta = preguntas.get(num-1);
 		this.numPregunta = num;	
 		
 		return pregunta;

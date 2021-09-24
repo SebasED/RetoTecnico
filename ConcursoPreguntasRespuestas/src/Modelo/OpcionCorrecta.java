@@ -90,6 +90,6 @@ public class OpcionCorrecta {
 	}
 	
 	private void obtenerRespuesta(int numRespuesta) {
-		this.respuesta = this.respuestas.get(numRespuesta);
+		this.respuesta = this.respuestas.get(numRespuesta-1);
 	}
 }

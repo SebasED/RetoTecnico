@@ -95,7 +95,7 @@ public class Opciones {
 	}
 	
 	private void obtenerOpciones(int numPreg){
-		String listaOpciones = this.opcionesCategoria.get(numPreg);
+		String listaOpciones = this.opcionesCategoria.get(numPreg-1);
 		this.opciones = listaOpciones.split(",");	
 	}
 }

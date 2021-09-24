@@ -44,7 +44,8 @@ public class Juego {
 			}
 		}catch(Exception e){
 			System.out.println("El error es " + e);
-			salir();
+			JOptionPane.showMessageDialog(null, "Debe elegir una opción correcta", "JUEGO DE PREGUNTAS", JOptionPane.ERROR_MESSAGE);
+			inicio();
 		}		
 	}
 	
@@ -62,11 +63,6 @@ public class Juego {
 			inicio();
 		}
 		ronda = new Ronda(nombre);
-				//System.out.println("Posibles respuestas");
-		
-		//opcionCorrecta = new OpcionCorrecta(1,pregunta.getNumPregunta());
-		//System.out.println("respuesta correcta");
-		//System.out.println(opcionCorrecta.getRespuesta());
 	}
 	
 	
