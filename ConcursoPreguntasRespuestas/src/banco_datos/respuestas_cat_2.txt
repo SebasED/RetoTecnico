@@ -1,0 +1,5 @@
+4,20,8,10
+Reina de belleza,Escritora,Faraona de Egipto,Ama de casa
+Mercurio, Marte, Jupiter, Venus
+2,4,5,10
+360º,50º,100º,180º

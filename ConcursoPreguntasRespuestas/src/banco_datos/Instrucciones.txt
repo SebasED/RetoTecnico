@@ -1,0 +1,6 @@
+El juego consta de 5 niveles donde en cada nivel deberas responder una pregunta
+de forma correcta para poder avanzar, a medida que avanzas la dificultad aumentará
+y tus ganancias igual. Tienes la opción de salir del juego antes de responder a una
+pregunta, si lo haces podras llevarte el acumulado de lo que has obtenido. Si decides
+responder y la respuesta es erronea, entonces perderas el juego y te iras con el 
+acumulado en cero.

@@ -1,0 +1,5 @@
+-10ºC,5ºC,0ºC,-20ºC
+4 tiempos,2 tiempos,1 tiempo, todas las anteriores
+Japon,La India,Estados Unidos,China
+Leonardo da Vinci,Marco Polo,Cristobal Colon,Pablo Picasso
+Astrología,Astronomía,Geología,Economía

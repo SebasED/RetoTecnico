@@ -1,0 +1,5 @@
+Homero,Garcia Marquez,Julio Cortázar,Oscar Wilde
+500,120,206,200
+1945,1495,1500,1492
+1939,1938,1930,1920
+Riñones,pulmones,Piel,Páncreas
