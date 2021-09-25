@@ -1,8 +1,9 @@
 package Modelo;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class OpcionCorrecta {
@@ -45,7 +46,8 @@ public class OpcionCorrecta {
 		BufferedReader br = null;
 		
 		try {
-			br = new BufferedReader(new FileReader(archivo));
+			//br = new BufferedReader(new FileReader(archivo));
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(archivo), "utf-8"));
 			String texto = br.readLine();
 			while(texto != null) {
 				respuestas.add(texto);

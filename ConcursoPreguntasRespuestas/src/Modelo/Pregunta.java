@@ -1,8 +1,9 @@
 package Modelo;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Pregunta {
@@ -52,8 +53,11 @@ public class Pregunta {
 		int num = (int) Math.floor(Math.random()*5 + 1);
 		BufferedReader br = null;
 		
+		
+		
 		try {
-			br = new BufferedReader(new FileReader(archivo));
+			//br = new BufferedReader(new FileReader(archivo));
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(archivo), "utf-8"));
 			String texto = br.readLine();
 			while(texto != null) {
 				preguntas.add(texto);
