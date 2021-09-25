@@ -10,7 +10,7 @@ public class Jugador {
 	private String nombre;
 	private String resultado;
 	private int premio = 0;
-	private int ronda = 0;
+	private int ronda = 1;
 	
 	public Jugador(String nombre) {
 		super();

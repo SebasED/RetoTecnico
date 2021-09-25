@@ -2,3 +2,5 @@
 Jugador [nombre=Sebastian, premio=0, ronda=1, resultado=Perdio]
 Jugador [nombre=Sara, premio=16500000, ronda=5, resultado=Ganador]
 Jugador [nombre=Eliza, premio=2500000, ronda=4, resultado=Jugador retirad@]
+Jugador [nombre=Manuel, premio=0, ronda=1, resultado=Jugador retirad@]
+Jugador [nombre=jeffer, premio=1000000, ronda=3, resultado=Jugador retirad@]

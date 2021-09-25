@@ -50,7 +50,7 @@ public class Ronda {
 		                "\n 4. " + opciones.getOpciones()[3]+
 		                "\n 5. " + "Elija esta opción si desea retirarse"+
 		                "\n Debe escribir una sola respuesta (1, 2, 3, 4 o 5) ",
-		                "JUEGO DE PREGUNTAS. Ronda: " + numRonda, JOptionPane.INFORMATION_MESSAGE);
+		                "JUEGO DE PREGUNTAS. Ronda: " + numRonda + ". Acumulado: $" + jugador.getPremio(), JOptionPane.INFORMATION_MESSAGE);
 				
 				respuestaElegida = Integer.parseInt(respuesta);
 				if(respuestaElegida < 1 || respuestaElegida > 5) {
