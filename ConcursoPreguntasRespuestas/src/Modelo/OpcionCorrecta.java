@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+// Esta clase contiene la opción correcta de una pregutna especifica 
 public class OpcionCorrecta {
 	private int categoria;
 	private String respuesta;

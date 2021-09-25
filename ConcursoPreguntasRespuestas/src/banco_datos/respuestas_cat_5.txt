@@ -1,4 +1,4 @@
-Flores,Verduras,Árbol,Grano
+Flores,Verduras,Arbol,Grano
 Poeta,Novelista,Dramaturgo,Ensayista
 F,G,E,H
 Cobalto,Berilio,Telurio,Hafnio

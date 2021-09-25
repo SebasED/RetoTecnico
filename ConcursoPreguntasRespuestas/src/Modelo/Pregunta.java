@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+// Esta clase elige la pregunta según la categoría
 public class Pregunta {
 	ArrayList<String> preguntas = new ArrayList<>();
 	private int numPregunta;
 		
 	public Pregunta() {
-		super();
-		
+		super();		
 	}
 	
 	public int getNumPregunta() {

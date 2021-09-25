@@ -1,10 +1,12 @@
 package Modelo;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+// Esta clase contiene las opciones de respuesta según la pregunta y la categoría
 public class Opciones {
 	private ArrayList<String> opcionesCategoria = new ArrayList<>();
 	private String[] opciones;
@@ -73,7 +75,8 @@ public class Opciones {
 		String archivo = identificarArchivo(a);
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader(archivo));
+			//br = new BufferedReader(new FileReader(archivo));
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(archivo), "utf-8"));
 			String texto = br.readLine();
 			while(texto != null) {
 				this.opcionesCategoria.add(texto);

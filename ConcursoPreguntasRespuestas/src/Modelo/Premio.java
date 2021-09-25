@@ -1,5 +1,6 @@
 package Modelo;
 
+//Contiene el premio (dinero) que se optiene por avanzar en cada ronda
 public class Premio {
 	private int dinero = 0;
 	private int ronda;

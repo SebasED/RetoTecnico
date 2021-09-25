@@ -4,17 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
+// Esta clase muestra la parte inicial del juego y da inicio al mismo
 public class Juego {
 	
 	Ronda ronda;
-	OpcionCorrecta opcionCorrecta;
-	int contador;
 	
 	public Juego() {
 		super();
 	}
-
-	public void inicio() {
+	
+	public void mostrarInicio() {
 		String opcion = "";
 		int opcionSeleccionada;
 		
@@ -47,7 +46,7 @@ public class Juego {
 				salir();
 			System.out.println("El error es " + e);
 			JOptionPane.showMessageDialog(null, "Debe elegir una opción correcta", "JUEGO DE PREGUNTAS", JOptionPane.ERROR_MESSAGE);
-			inicio();
+			mostrarInicio();
 		}		
 	}
 	
@@ -62,7 +61,7 @@ public class Juego {
 			}
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, "Debe ingresar un nombre para poder jugar", "JUEGO DE PREGUNTAS", JOptionPane.QUESTION_MESSAGE);
-			inicio();
+			mostrarInicio();
 		}
 		ronda = new Ronda(nombre);
 	}
@@ -73,7 +72,7 @@ public class Juego {
 
             File file = new File ("src\\banco_datos\\Instrucciones.txt");
             Runtime.getRuntime().exec("cmd /c start "+file);
-            inicio();
+            mostrarInicio();
 		}catch (IOException ex) {
 
             System.out.println(ex);
@@ -87,7 +86,7 @@ public class Juego {
 	public void ningunaOpcion() {
 		JOptionPane.showMessageDialog(null, " Elija una opciones correcta",
                 "JUEGO DE PREGUNTAS", JOptionPane.ERROR_MESSAGE);
-		inicio();
+		mostrarInicio();
 	} 
 }
 

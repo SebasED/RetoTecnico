@@ -2,6 +2,7 @@ package Modelo;
 
 import javax.swing.JOptionPane;
 
+// Contiene la lógica principal del juego 
 public class Ronda {
 	int numRonda = 1;
 	String respuesta = "";
@@ -25,7 +26,7 @@ public class Ronda {
 		try {
 			JOptionPane.showMessageDialog(null, "Bienvenid@ " + jugador.getNombre() + " ¿List@ para inicar?", "JUEGO DE PREGUNTAS", 1);
 		}catch(Exception e) {
-			juego.inicio();
+			juego.mostrarInicio();
 		}
 		
 		iniciarRonda();
